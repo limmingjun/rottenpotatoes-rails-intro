@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def index
+    @all_ratings = Movie.movie_ratings
     if params[:sort] == "title"
       @movies = Movie.all.sort_by { |a| [ a.title] }
       @highlight = 'title'
