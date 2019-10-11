@@ -16,7 +16,7 @@ class MoviesController < ApplicationController
       if session[:ratings].nil?
         @ratings = @all_ratings
       else
-        @ratings = session[:ratings]
+        @ratings = session[:ratings].keys
       end
     else
       @ratings = params[:ratings].keys
