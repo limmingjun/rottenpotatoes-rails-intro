@@ -9,4 +9,5 @@ class Movie < ActiveRecord::Base
       return Movie.all
     end
     Movie.where({rating: ratings.keys})
+  end
 end
