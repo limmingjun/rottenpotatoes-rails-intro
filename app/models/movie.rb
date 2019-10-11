@@ -8,6 +8,6 @@ class Movie < ActiveRecord::Base
     if ratings.nil?
       return Movie.all
     end
-    Movie.where({rating: ratings.keys})
+    Movie.where({rating: ratings})
   end
 end
