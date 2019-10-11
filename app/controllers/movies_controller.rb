@@ -12,10 +12,10 @@ class MoviesController < ApplicationController
 
   def index
     @all_ratings = Movie.movie_ratings
-    if params[:rating].nil?
+    if params[:ratings].nil?
       @ratings = @all_ratings
     else
-      @ratings = params[:rating].keys
+      @ratings = params[:ratings].keys
     end
     if params[:sort] == "title"
       @movies = Movie.with_ratings(@ratings).sort_by { |a| [ a.title] }
